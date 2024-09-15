@@ -1,0 +1,42 @@
+{% extends "portfolio/base.html" %}
+{% load i18n %}
+{% block content %}
+    <section id="home">
+        <div>
+            <div>
+                <img
+                    src="{{ profile.image.url }}"
+                    alt="profile image"
+                />
+                <a href="{{ profile.github_url }}">{% translate "Github" %}</a>
+            </div>
+            <div>
+                <h1>
+                    {{ profile.name }}
+                </h1>
+                <p>
+                    {{ profile.description }}
+                </p>
+                {% if profile.resume_url %}
+                <a
+                    href="{{ profile.resume_url }}"
+                >
+
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        
+    </section>
+
+    <section id="projects">
+        
+    </section>
+
+    <section id="contact">
+        
+    </section>
+{% endblock content %}

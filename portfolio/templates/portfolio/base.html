@@ -1,0 +1,33 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="{% static 'css/output.css' %}" rel="stylesheet">
+
+        <title>caferven's portfolio</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div>
+                    <a href="{% url 'index' %}#home">Portfolio</a>
+                    <div>
+                        <a href="{% url 'index' %}#home">{% translate "Home" %}</a>
+                        <a href="{% url 'index' %}#experience">{% translate "Experience" %}</a>
+                        <a href="{% url 'index' %}#projects">{% translate "Projects" %}</a>
+                        <a href="{% url 'index' %}#about">{% translate "About Me" %}</a>
+                        <a href="{% url 'index' %}#contact">{% translate "Contact" %}</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <main role="main">
+            {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>
