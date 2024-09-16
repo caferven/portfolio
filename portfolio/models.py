@@ -32,6 +32,7 @@ class Experience(models.Model):
     job_description = models.CharField(max_length=500)
     date_start = models.DateField()
     date_end = models.DateField(default=timezone.now)
+    image_preview = models.ImageField(_("Image Preview"), default='default_icon.png', upload_to='experience_pics')
 
     def __str__(self):
         return self.job_title
@@ -41,6 +42,7 @@ class Project(models.Model):
     profile = models.ForeignKey(Profile, related_name="Project", on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
+    image_preview = models.ImageField(_("Image Preview"), default='default_icon.png', upload_to='project_pics')
 
     def __str__(self):
         return self.name
