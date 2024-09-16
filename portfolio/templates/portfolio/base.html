@@ -6,26 +6,56 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+
         <link href="{% static 'css/output.css' %}" rel="stylesheet">
 
-        <title>caferven's portfolio</title>
+        <title>{{ profile.name }}'s portfolio</title>
     </head>
-    <body>
-        <header>
-            <nav class="bg-white flex items-center justify-between">
-                <div>
-                    <div class="relative">
-                        <a href="{% url 'index' %}#experience">{% translate "Experience" %}</a>
-                        <a href="{% url 'index' %}#projects">{% translate "Projects" %}</a>
-                        <a href="{% url 'index' %}#about">{% translate "About Me" %}</a>
-                        <a href="{% url 'index' %}#contact">{% translate "Contact" %}</a>
-                    </div>
+    <body class="font-readex">
+        <header class="bg-l-white dark:bg-f-gray">
+            <nav class="container mx-auto p-6 lg:px-8 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="{{ profile.logo.url }}" alt="profile image" class="size-6"/>
+                    <span class="text-black dark:text-f-white text-sm">{{ profile.name }}</span>
                 </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="{% url 'index' %}#experience" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Experience" %}</a>
+                    <a href="{% url 'index' %}#projects" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Projects" %}</a>
+                    <a href="{% url 'index' %}#about" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "About Me" %}</a>
+                    <a href="{% url 'index' %}#contact" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Contact" %}</a>
+                </div>
+                <div>
+                    <img src="{% static 'img/dark-mode.png' %}" alt="Dark mode" class="hidden md:block size-6 cursor-pointer">
+                </div>
+                <div id="hamburger-menu" class="space-y-1 md:hidden cursor-pointer z-10">
+                    <div class="w-6 h-0.5 bg-black dark:bg-f-lavender"></div>
+                    <div class="w-6 h-0.5 bg-black dark:bg-f-lavender"></div>
+                    <div class="w-6 h-0.5 bg-black dark:bg-f-lavender"></div>
+                </div>
+                <ul id="dropdown-menu" class="hidden absolute left-0 top-0 w-full bg-l-white dark:bg-f-gray p-10 space-y-4 text-center">
+                    <li>
+                        <a href="{% url 'index' %}#experience" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Experience" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}#projects" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Projects" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}#about" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "About Me" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}#contact" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Contact" %}</a>
+                    </li>
+                </ul>
             </nav>
         </header>
         
         <main role="main">
             {% block content %}{% endblock %}
         </main>
+
+        <script src="{% static 'js/app.js' %}"></script>
     </body>
 </html>

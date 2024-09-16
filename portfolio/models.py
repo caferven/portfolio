@@ -7,7 +7,8 @@ from PIL import Image
 class Profile(models.Model):
     name = models.CharField(max_length=32)
     description = models.CharField(max_length=300)
-    image = models.ImageField(_("Image"), default='default_icon.png', upload_to='profile_pics')
+    image = models.ImageField(_("Image"), default='default-icon.png', upload_to='profile_pics')
+    logo = models.ImageField(_("Logo"), default='logo.png', upload_to='extra')
     mail = models.CharField(max_length=200)
     resume_url = models.CharField(max_length=200, blank=True)
     linkedin_url = models.CharField(max_length=300, blank=True)
@@ -29,10 +30,10 @@ class Experience(models.Model):
     profile = models.ForeignKey(Profile, related_name="Experience", on_delete=models.CASCADE)
     company_name = models.CharField(max_length=100)
     job_title = models.CharField(max_length=100)
-    job_description = models.CharField(max_length=500)
+    job_description = models.CharField(max_length=500, blank=True)
     date_start = models.DateField()
     date_end = models.DateField(default=timezone.now)
-    image_preview = models.ImageField(_("Image Preview"), default='default_icon.png', upload_to='experience_pics')
+    image_preview = models.ImageField(_("Image Preview"), default='no-image.png', upload_to='experience_pics')
 
     def __str__(self):
         return self.job_title
@@ -41,8 +42,9 @@ class Experience(models.Model):
 class Project(models.Model):
     profile = models.ForeignKey(Profile, related_name="Project", on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=200)
-    image_preview = models.ImageField(_("Image Preview"), default='default_icon.png', upload_to='project_pics')
+    description = models.CharField(max_length=200, blank=True)
+    image_preview = models.ImageField(_("Image Preview"), default='no-image.png', upload_to='project_pics')
+    github_url = models.CharField(max_length=300, blank=True)
 
     def __str__(self):
         return self.name
