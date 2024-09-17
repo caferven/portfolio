@@ -17,18 +17,18 @@
         <title>{{ profile.name }}'s portfolio</title>
     </head>
     <body class="font-readex dark">
-        <header class="bg-l-white dark:bg-f-gray">
+        <header class="bg-l-crust dark:bg-f-gray">
             <nav class="container mx-auto p-6 lg:px-8 flex items-center justify-between">
                 <div class="flex items-center gap-2">
                     <img src="{{ profile.logo.url }}" alt="profile image" class="size-6"/>
-                    <span class="text-black dark:text-f-white text-sm">{{ profile.name }}</span>
+                    <span class="text-l-gray-dark dark:text-f-white text-lg">{{ profile.name }}</span>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="{% url 'index' %}" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Home" %}</a>
-                    <a href="{% url 'index' %}#about" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "About Me" %}</a>
-                    <a href="{% url 'index' %}#experience" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Experience" %}</a>
-                    <a href="{% url 'index' %}#projects" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Projects" %}</a>
-                    <a href="{% url 'index' %}#contact" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Contact" %}</a>
+                    <a href="{% url 'index' %}" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Home" %}</a>
+                    <a href="{% url 'index' %}#about" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "About Me" %}</a>
+                    <a href="{% url 'index' %}#experience" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Experience" %}</a>
+                    <a href="{% url 'index' %}#projects" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Projects" %}</a>
+                    <a href="{% url 'index' %}#contact" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Contact" %}</a>
                 </div>
                 <div class="flex items-center gap-4">
                         <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
@@ -52,7 +52,7 @@
                         <div class="w-6 h-0.5 bg-black dark:bg-f-lavender"></div>
                     </div>
                 </div>
-                <ul id="dropdown-menu" class="hidden absolute left-0 top-0 w-full bg-l-white dark:bg-f-gray p-10 space-y-4 text-center">
+                <ul id="dropdown-menu" class="hidden absolute left-0 top-0 w-full bg-l-crust dark:bg-f-gray p-10 space-y-4 text-center">
                     <li>
                         <a href="{% url 'index' %}" class="text-sm font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Home" %}</a>
                     </li>
@@ -72,7 +72,7 @@
             </nav>
         </header>
         
-        <main role="main" class="dark:bg-f-gray-light dark:text-f-white">
+        <main role="main" class="bg-l-white dark:bg-f-gray-light dark:text-f-white">
             {% block content %}{% endblock %}
         </main>
 

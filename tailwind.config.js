@@ -28,6 +28,7 @@ module.exports = {
       'l-gray': '#5c5f77',
       'l-gray-light': '#9ca0b0',
       'l-white': '#eff1f5',
+      'l-crust': '#dce0e8',
       'black': '#11111b'
     },
     fontFamily: {

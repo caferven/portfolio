@@ -2,17 +2,18 @@
 {% load i18n %}
 {% load static %}
 {% block content %}
-    <section id="about">
-        <div class="container mx-auto flex py-20 gap-20">
-            <div class="relative rounded-full overflow-hidden border-4 border-f-blue">
+    <section id="about" class="px-10">
+        <div class="container mx-auto flex flex-col-reverse lg:flex-row py-20 gap-20 justify-center items-center">
+            <div class="relative overflow-hidden">
                 <img
                     src="{{ profile.image.url }}"
                     alt="profile image"
+                    class="border-4 border-f-blue rounded-full my-4"
                 />
             </div>
-            <div class="my-auto flex flex-col gap-4">
+            <div class="my-auto flex flex-col gap-4 overflow-x-auto">
                 <h1 class="font-semibold dark:text-f-blue text-f-blue text-2xl">About Me</h1>
-                <pre class="font-readex dark:text-f-white text-l-gray-dark text-xl">{{ profile.description }}</pre>
+                <div class="font-readex dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap">{{ profile.description }}</div>
                 <div class="flex flex-row gap-4">
                     {% if profile.github_url %}
                     <a
@@ -31,10 +32,8 @@
                     {% endif %}
 
                     {% if profile.resume %}
-                    <a
-                        href="{{ profile.resume }}"
-                    >
-                        <img src="{% static 'img/resume-logo.png' %}" alt="Linkedin Logo" class="size-10 cursor-pointer">
+                    <a href="{{ profile.resume.url }}" download>
+                        <img src="{% static 'img/resume-logo.png' %}" alt="Resume Logo" class="size-10 cursor-pointer">
                     </a>
                     {% endif %}
                 </div>
