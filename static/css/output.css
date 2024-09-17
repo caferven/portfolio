@@ -791,6 +791,10 @@ select {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -808,6 +812,11 @@ select {
   margin-right: auto;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .block {
   display: block;
 }
@@ -818,6 +827,11 @@ select {
 
 .hidden {
   display: none;
+}
+
+.size-10 {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .size-6 {
@@ -841,6 +855,14 @@ select {
   cursor: pointer;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
 .items-center {
   align-items: center;
 }
@@ -851,6 +873,10 @@ select {
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-20 {
+  gap: 5rem;
 }
 
 .gap-4 {
@@ -869,12 +895,29 @@ select {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
 
 .border {
   border-width: 1px;
+}
+
+.border-4 {
+  border-width: 4px;
+}
+
+.border-f-blue {
+  --tw-border-opacity: 1;
+  border-color: rgb(137 180 250 / var(--tw-border-opacity));
 }
 
 .border-f-lavender {
@@ -904,6 +947,11 @@ select {
   padding: 1.5rem;
 }
 
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -912,9 +960,19 @@ select {
   font-family: Readex Pro, sans-serif;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-semibold {
@@ -928,6 +986,11 @@ select {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(17 17 27 / var(--tw-text-opacity));
+}
+
+.text-f-blue {
+  --tw-text-opacity: 1;
+  color: rgb(137 180 250 / var(--tw-text-opacity));
 }
 
 .text-l-gray-dark {
@@ -960,9 +1023,19 @@ select {
   background-color: rgb(30 30 46 / var(--tw-bg-opacity));
 }
 
+.dark\:bg-f-gray-light:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 50 68 / var(--tw-bg-opacity));
+}
+
 .dark\:bg-f-lavender:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(180 190 254 / var(--tw-bg-opacity));
+}
+
+.dark\:text-f-blue:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(137 180 250 / var(--tw-text-opacity));
 }
 
 .dark\:text-f-white:is(.dark *) {

@@ -1,29 +1,43 @@
 {% extends "portfolio/base.html" %}
 {% load i18n %}
+{% load static %}
 {% block content %}
-    <section id="home">
-        <div>
-            <div>
+    <section id="about">
+        <div class="container mx-auto flex py-20 gap-20">
+            <div class="relative rounded-full overflow-hidden border-4 border-f-blue">
                 <img
                     src="{{ profile.image.url }}"
                     alt="profile image"
                 />
-                <a href="{{ profile.github_url }}">{% translate "Github" %}</a>
             </div>
-            <div>
-                <h1>
-                    {{ profile.name }}
-                </h1>
-                <p>
-                    {{ profile.description }}
-                </p>
-                {% if profile.resume_url %}
-                <a
-                    href="{{ profile.resume_url }}"
-                >
+            <div class="my-auto flex flex-col gap-4">
+                <h1 class="font-semibold dark:text-f-blue text-f-blue text-2xl">About Me</h1>
+                <pre class="font-readex dark:text-f-white text-l-gray-dark text-xl">{{ profile.description }}</pre>
+                <div class="flex flex-row gap-4">
+                    {% if profile.github_url %}
+                    <a
+                        href="{{ profile.github_url }}"
+                    >
+                        <img src="{% static 'img/github-logo.png' %}" alt="Github Logo" class="size-10 cursor-pointer">
+                    </a>
+                    {% endif %}
 
-                </a>
-                {% endif %}
+                    {% if profile.linkedin_url %}
+                    <a
+                        href="{{ profile.linkedin_url }}"
+                    >
+                        <img src="{% static 'img/linkedin-logo.png' %}" alt="Linkedin Logo" class="size-10 cursor-pointer">
+                    </a>
+                    {% endif %}
+
+                    {% if profile.resume %}
+                    <a
+                        href="{{ profile.resume }}"
+                    >
+                        <img src="{% static 'img/resume-logo.png' %}" alt="Linkedin Logo" class="size-10 cursor-pointer">
+                    </a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </section>
