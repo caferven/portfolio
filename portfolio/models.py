@@ -10,7 +10,7 @@ class Profile(models.Model):
     image = models.ImageField(_("Image"), default='default-icon.png', upload_to='profile_pics')
     logo = models.ImageField(_("Logo"), default='logo.png', upload_to='extra')
     mail = models.CharField(max_length=200)
-    resume = models.FileField(blank=True)
+    resume = models.FileField(blank=True, upload_to='resumes')
     linkedin_url = models.CharField(max_length=300, blank=True)
     github_url = models.CharField(max_length=300, blank=True)
 

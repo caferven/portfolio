@@ -848,6 +848,10 @@ select {
   height: 0.125rem;
 }
 
+.w-10\/12 {
+  width: 83.333333%;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -910,10 +914,6 @@ select {
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.overflow-x-auto {
-  overflow-x: auto;
 }
 
 .whitespace-pre-wrap {
@@ -1087,6 +1087,10 @@ select {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:items-start {
+    align-items: flex-start;
   }
 
   .lg\:gap-x-12 {
