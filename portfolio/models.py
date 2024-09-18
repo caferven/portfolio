@@ -24,16 +24,25 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Technology(models.Model):
+    name = models.CharField(max_length=20)
+    logo = models.ImageField(_("Logo"), default='no-image.png', upload_to='technology_pics')
+
+    def __str__(self) -> str:
+        return self.name
 
 
 class Experience(models.Model):
     profile = models.ForeignKey(Profile, related_name="Experience", on_delete=models.CASCADE)
     company_name = models.CharField(max_length=100)
+    company_logo = models.ImageField(_("Company Logo"), default='no-image.png', upload_to='experience_pics')
     job_title = models.CharField(max_length=100)
-    job_description = models.TextField(max_length=500, blank=True)
+    job_description = models.TextField(blank=True)
     date_start = models.DateField()
-    date_end = models.DateField(default=timezone.now)
-    image_preview = models.ImageField(_("Image Preview"), default='no-image.png', upload_to='experience_pics')
+    date_end = models.DateField()
+    technologies = models.ManyToManyField(Technology, blank=True)
 
     def __str__(self):
         return self.job_title
@@ -55,6 +64,7 @@ class Project(models.Model):
     description = models.TextField(max_length=200, blank=True)
     image_preview = models.ImageField(_("Image Preview"), default='no-image.png', upload_to='project_pics')
     github_url = models.CharField(max_length=300, blank=True)
+    technologies = models.ManyToManyField(Technology)
 
     def __str__(self):
         return self.name
