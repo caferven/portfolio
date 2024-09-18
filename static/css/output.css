@@ -822,12 +822,20 @@ select {
   margin-bottom: auto;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .block {
   display: block;
 }
 
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .hidden {
@@ -856,8 +864,20 @@ select {
   width: 100%;
 }
 
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-screen-xl {
+  max-width: 1280px;
+}
+
 .cursor-pointer {
   cursor: pointer;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -894,6 +914,15 @@ select {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-x-20 {
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+}
+
+.gap-y-12 {
+  row-gap: 3rem;
 }
 
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
@@ -974,9 +1003,19 @@ select {
   padding-right: 2.5rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .text-center {
@@ -1002,6 +1041,14 @@ select {
   line-height: 1.25rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
 .font-semibold {
   font-weight: 600;
 }
@@ -1010,9 +1057,22 @@ select {
   line-height: 1.5rem;
 }
 
+.leading-tight {
+  line-height: 1.25;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
 .text-f-blue {
   --tw-text-opacity: 1;
   color: rgb(137 180 250 / var(--tw-text-opacity));
+}
+
+.text-f-peach {
+  --tw-text-opacity: 1;
+  color: rgb(250 179 135 / var(--tw-text-opacity));
 }
 
 .text-l-gray-dark {
@@ -1060,6 +1120,11 @@ select {
   color: rgb(137 180 250 / var(--tw-text-opacity));
 }
 
+.dark\:text-f-peach:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(250 179 135 / var(--tw-text-opacity));
+}
+
 .dark\:text-f-white:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(205 214 244 / var(--tw-text-opacity));
@@ -1070,6 +1135,26 @@ select {
   color: rgb(180 190 254 / var(--tw-text-opacity));
 }
 
+@media (min-width: 640px) {
+  .sm\:mt-16 {
+    margin-top: 4rem;
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:flex {
     display: flex;
@@ -1077,6 +1162,10 @@ select {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:flex-row {
@@ -1092,8 +1181,18 @@ select {
          column-gap: 3rem;
   }
 
+  .lg\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 }

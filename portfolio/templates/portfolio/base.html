@@ -16,7 +16,7 @@
 
         <title>{{ profile.name }}'s portfolio</title>
     </head>
-    <body class="font-readex dark">
+    <body class="font-readex">
         <header class="bg-l-crust dark:bg-f-gray">
             <nav class="container mx-auto p-6 lg:px-8 flex items-center justify-between">
                 <div class="flex items-center gap-2">
@@ -24,7 +24,7 @@
                     <span class="text-l-gray-dark dark:text-f-white text-lg">{{ profile.name }}</span>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="{% url 'index' %}" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Home" %}</a>
+                    <a href="{% url 'index' %}#" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Home" %}</a>
                     <a href="{% url 'index' %}#about" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "About Me" %}</a>
                     <a href="{% url 'index' %}#experience" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Experience" %}</a>
                     <a href="{% url 'index' %}#projects" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Projects" %}</a>
@@ -44,7 +44,7 @@
                                 {% endfor %}
                             </select>
                         </form>
-                        <img id="theme-mode" src="{% static 'img/light-mode.png' %}" alt="Dark mode" class="size-6 cursor-pointer">
+                        <img id="theme-mode" src="{% static 'img/dark-mode.png' %}" alt="Dark mode" class="size-6 cursor-pointer">
                     
                     <div id="hamburger-menu" class="space-y-1 lg:hidden cursor-pointer z-10">
                         <div class="w-6 h-0.5 bg-black dark:bg-f-lavender"></div>

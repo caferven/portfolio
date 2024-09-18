@@ -37,6 +37,16 @@ class Experience(models.Model):
 
     def __str__(self):
         return self.job_title
+    
+
+class Contribution(models.Model):
+    profile = models.ForeignKey(Profile, related_name="Contribution", on_delete=models.CASCADE)
+    project = models.CharField(max_length=100)
+    description = models.TextField(max_length=500, blank=True)
+    project_url = models.CharField()
+
+    def __str__(self) -> str:
+        return self.project
 
 
 class Project(models.Model):
