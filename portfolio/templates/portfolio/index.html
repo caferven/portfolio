@@ -13,7 +13,7 @@
             </div>
             <div class="my-auto flex flex-col gap-4 items-center lg:items-start">
                 <h1 class="font-semibold dark:text-f-blue text-f-blue text-2xl">About Me</h1>
-                <div class="font-readex dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap">{{ profile.description }}</div>
+                <div class="dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap">{{ profile.description }}</div>
                 <div class="flex flex-row gap-4">
                     {% if profile.github_url %}
                     <a
@@ -53,10 +53,10 @@
                 <div class="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
                     {% for contribution in profile.Contribution.all %}
                         <div class="space-y-4">
-                            <h3 class="text-2xl font-bold leading-tight dark:text-f-white text-l-gray-dark">
+                            <h3 class="text-2xl font-bold leading-tight dark:text-f-white text-l-gray-dark break-words">
                                 {{ contribution.project }}
                             </h3>
-                            <div class="font-readex dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap">{{ contribution.description }}</div>
+                            <div class="dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap">{{ contribution.description }}</div>
                             <a
                                 href="{{ contribution.project_url }}"
                                 class=" dark:text-f-white text-l-gray-dark"
