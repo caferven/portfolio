@@ -3,7 +3,7 @@
 {% load static %}
 {% block content %}
     <section id="about" class="px-10">
-        <div class="container mx-auto flex flex-col-reverse lg:flex-row md:py-24 py-16 gap-20 justify-center items-center">
+        <div class="container mx-auto flex flex-col-reverse lg:flex-row md:py-24 py-24 gap-20 justify-center items-center">
             <div class="relative overflow-hidden">
                 <img
                     src="{{ profile.image.url }}"
@@ -13,7 +13,7 @@
             </div>
             <div class="my-auto flex flex-col gap-4 items-center">
                 <h1 class="font-extrabold leading-tight tracking-tight sm:text-4xl text-2xl dark:text-f-blue text-f-blue">About Me</h1>
-                <div class="dark:text-f-white text-l-gray-dark text-l py-8 whitespace-pre-wrap">{{ profile.description }}</div>
+                <div class="dark:text-f-white text-l-gray-dark text-l py-8 whitespace-pre-wrap max-w-xl mx-auto">{{ profile.description }}</div>
                 <div class="w-60 h-0.5 bg-f-blue"></div>
                 <div class="flex flex-row gap-4">
                     {% if profile.github_url %}
@@ -40,16 +40,16 @@
                 </div>
             </div>
         </div>
-    </section>
+</section>
 
     <section id="experience">
         {% if has_experience %}
-            <div class="container mx-auto px-6 md:py-24 py-16">
-                <h1 class="font-extrabold leading-tight tracking-tight pb-10 sm:text-4xl text-2xl text-f-red text-center">Experience</h1>
+            <div class="container mx-auto px-6 md:py-24 py-24">
+                <h1 class="font-extrabold leading-tight tracking-tight pb-10 sm:text-4xl text-2xl text-f-red text-center">Work experience</h1>
                 <div class="relative border-l-2 border-l-gray-light max-w-3xl mx-auto">
                     {% for experience in profile.Experience.all %}
                         <div class="relative pl-12 py-8">
-                            <div class="absolute -left-2 top-4 w-4 h-4 rounded-full bg-f-pink flex items-center justify-center">
+                            <div class="absolute -left-2 top-6 w-4 h-4 rounded-full bg-f-pink flex items-center justify-center">
                             </div>
                             <div class="ml-6">
                                 <div class="flex items-center justify-between mb-2">
@@ -72,9 +72,9 @@
                         Contributions
                     </h1>
                 </div>
-                <div class="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-8 gap-y-12 sm:grid-cols-2 justify-items-center">
                     {% for contribution in profile.Contribution.all %}
-                        <div class="space-y-4">
+                        <div class="space-y-4 max-w-sm">
                             <h3 class="text-2xl font-bold leading-tight dark:text-f-white text-l-gray-dark break-words">
                                 {{ contribution.project }}
                             </h3>

@@ -32,7 +32,7 @@ module.exports = {
       'black': '#11111b'
     },
     fontFamily: {
-      readex:["Readex Pro", 'sans-serif']
+      jetbrainsmono:["JetBrains Mono", 'monospace']
     },
     extend: {},
   },

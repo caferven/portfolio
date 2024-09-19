@@ -3,7 +3,7 @@ from portfolio.models import Profile
 
 
 def index(request):
-    profile = Profile.objects.get(name="caferven")
+    profile = Profile.objects.get(id="1")
     has_contributions = profile.Contribution.exists()
     has_experience = profile.Experience.exists()
     context = {
