@@ -3,7 +3,7 @@
 {% load static %}
 {% block content %}
     <section id="about" class="px-10">
-        <div class="container mx-auto flex flex-col-reverse lg:flex-row py-20 gap-20 justify-center items-center">
+        <div class="container mx-auto flex flex-col-reverse lg:flex-row md:py-24 py-16 gap-20 justify-center items-center">
             <div class="relative overflow-hidden">
                 <img
                     src="{{ profile.image.url }}"
@@ -13,8 +13,8 @@
             </div>
             <div class="my-auto flex flex-col gap-4 items-center">
                 <h1 class="font-extrabold leading-tight tracking-tight sm:text-4xl text-2xl dark:text-f-blue text-f-blue">About Me</h1>
-                <div class="dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap">{{ profile.description }}</div>
-                <div class="w-52 h-0.5 bg-f-blue"></div>
+                <div class="dark:text-f-white text-l-gray-dark text-l py-8 whitespace-pre-wrap">{{ profile.description }}</div>
+                <div class="w-60 h-0.5 bg-f-blue"></div>
                 <div class="flex flex-row gap-4">
                     {% if profile.github_url %}
                     <a
@@ -44,20 +44,24 @@
 
     <section id="experience">
         {% if has_experience %}
-            <div class="container mx-auto px-6 py-8 flex flex-col items-center">
-                <h1 class="font-extrabold leading-tight tracking-tight sm:text-4xl text-2xl text-f-pink">Experience</h1>
-                {% for experience in profile.Experience.all %}
-                    <div class="relative border-l border-l-gray-light">
-                        <div class="mb-10 ml-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h2 class="text-lg font-semibold dark:text-f-white text-l-gray-dark">{{ experience.job_title }}</h2>
-                                <span class="text-sm dark:text-f-white text-l-gray-dark">Start date-End date</span>
+            <div class="container mx-auto px-6 md:py-24 py-16">
+                <h1 class="font-extrabold leading-tight tracking-tight pb-10 sm:text-4xl text-2xl text-f-red text-center">Experience</h1>
+                <div class="relative border-l-2 border-l-gray-light max-w-3xl mx-auto">
+                    {% for experience in profile.Experience.all %}
+                        <div class="relative pl-12 py-8">
+                            <div class="absolute -left-2 top-4 w-4 h-4 rounded-full bg-f-pink flex items-center justify-center">
                             </div>
-                            <p class="text-sm dark:text-f-white text-l-gray-dark mb-4">{{ experience.company_name }}</p>
-                            <div class="dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap">{{ experience.job_description }}</div>
+                            <div class="ml-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h2 class="text-lg font-semibold text-f-red">{{ experience.job_title }}</h2>
+                                    <span class="text-sm dark:text-f-white text-l-gray-dark font-semibold">{{ experience.date_start|date:"M Y" }}-{{ experience.date_end|date:"M Y" }}</span>
+                                </div>
+                                <p class="text-sm dark:text-f-white text-l-gray-dark mb-4 font-semibold">{{ experience.company_name }}</p>
+                                <div class="dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap">{{ experience.job_description }}</div>
+                            </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         {% endif %}
 
