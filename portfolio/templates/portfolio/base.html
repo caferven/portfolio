@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
 
         <link href="{% static 'css/output.css' %}" rel="stylesheet">
 
@@ -16,8 +17,8 @@
 
         <title>{{ profile.name }}'s portfolio</title>
     </head>
-    <body class="font-jetbrainsmono">
-        <header class="bg-l-crust dark:bg-f-gray sticky z-50 top-0 backdrop-filter backdrop-blur-sm bg-opacity-70">
+    <body>
+        <header class="bg-l-crust dark:bg-f-gray sticky z-50 top-0 backdrop-filter backdrop-blur-sm bg-opacity-70 font-jetbrainsmono">
             <nav class="container mx-auto p-6 lg:px-8 flex items-center justify-between">
                 <div class="flex items-center gap-2">
                     <img src="{{ profile.logo.url }}" alt="profile image" class="size-6"/>
