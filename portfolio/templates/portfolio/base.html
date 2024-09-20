@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
         <link href="{% static 'css/output.css' %}" rel="stylesheet">
 
@@ -22,19 +22,19 @@
             <nav class="container mx-auto p-6 lg:px-8 flex items-center justify-between">
                 <div class="flex items-center gap-2">
                     <img src="{{ profile.logo.url }}" alt="profile image" class="size-6"/>
-                    <span class="text-l-gray-dark dark:text-f-white text-lg">{{ profile.name }}</span>
+                    <span class="text-l-gray-dark dark:text-f-white text-md">{{ profile.name }}</span>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="{% url 'index' %}#" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Home" %}</a>
-                    <a href="{% url 'index' %}#about" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "About Me" %}</a>
-                    <a href="{% url 'index' %}#experience" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Experience" %}</a>
-                    <a href="{% url 'index' %}#projects" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Projects" %}</a>
-                    <a href="mailto:{{ profile.mail }}" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Contact" %}</a>
+                    <a href="{% url 'index' %}#" class="text-md font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Home" %}</a>
+                    <a href="{% url 'index' %}#about" class="text-md font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "About Me" %}</a>
+                    <a href="{% url 'index' %}#experience" class="text-md font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Experience" %}</a>
+                    <a href="{% url 'index' %}#projects" class="text-md font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Projects" %}</a>
+                    <a href="mailto:{{ profile.mail }}" class="text-md font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Contact" %}</a>
                 </div>
                 <div class="flex items-center gap-4">
                         <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
                             <input name="next" type="hidden" value="{{ redirect_to }}">
-                            <select onchange="this.form.submit()" class="bg-l-white border-f-lavender text-l-gray-dark dark:bg-f-gray border dark:border-f-lavender dark:text-f-white text-sm rounded-lg focus:ring-f-lavender focus:border-f-lavender block w-full p-2.5 cursor-pointer" name="language">
+                            <select onchange="this.form.submit()" style="background-image: none" class="bg-l-white border-f-lavender text-l-gray-dark dark:bg-f-gray border dark:border-f-lavender dark:text-f-white text-sm rounded-lg focus:ring-f-lavender focus:border-f-lavender block w-full p-2.5 cursor-pointer" name="language">
                                 {% get_current_language as LANGUAGE_CODE %}
                                 {% get_available_languages as LANGUAGES %}
                                 {% get_language_info_list for LANGUAGES as languages %}

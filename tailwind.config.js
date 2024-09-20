@@ -33,7 +33,7 @@ module.exports = {
     },
     fontFamily: {
       jetbrainsmono:['JetBrains Mono', 'monospace'],
-      readex:['Readex Pro', 'sans-serif']
+      ubuntu:['Ubuntu', 'sans-serif']
     },
     extend: {},
   },
