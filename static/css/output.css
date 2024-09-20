@@ -850,6 +850,10 @@ select {
   margin-left: 1.5rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -881,6 +885,10 @@ select {
 
 .h-4 {
   height: 1rem;
+}
+
+.h-48 {
+  height: 12rem;
 }
 
 .h-6 {
@@ -951,6 +959,10 @@ select {
   flex-direction: column-reverse;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -965,6 +977,10 @@ select {
 
 .justify-items-center {
   justify-items: center;
+}
+
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .gap-2 {
@@ -1052,6 +1068,11 @@ select {
   background-color: rgb(137 180 250 / var(--tw-bg-opacity));
 }
 
+.bg-f-lavender {
+  --tw-bg-opacity: 1;
+  background-color: rgb(180 190 254 / var(--tw-bg-opacity));
+}
+
 .bg-f-pink {
   --tw-bg-opacity: 1;
   background-color: rgb(245 194 231 / var(--tw-bg-opacity));
@@ -1075,12 +1096,21 @@ select {
   --tw-bg-opacity: 0.9;
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-10 {
   padding: 2.5rem;
 }
 
 .p-2\.5 {
   padding: 0.625rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .p-6 {
@@ -1092,6 +1122,11 @@ select {
   padding-right: 2.5rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1100,6 +1135,11 @@ select {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-2 {
@@ -1152,6 +1192,16 @@ select {
   line-height: 1.25rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .font-extrabold {
   font-weight: 800;
 }
@@ -1180,6 +1230,11 @@ select {
 .text-f-gray-light {
   --tw-text-opacity: 1;
   color: rgb(49 50 68 / var(--tw-text-opacity));
+}
+
+.text-f-lavender {
+  --tw-text-opacity: 1;
+  color: rgb(180 190 254 / var(--tw-text-opacity));
 }
 
 .text-f-peach {
@@ -1216,6 +1271,11 @@ select {
 .hover\:bg-f-blue:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(137 180 250 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-f-lavender:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(180 190 254 / var(--tw-bg-opacity));
 }
 
 .hover\:text-l-lavender:hover {
@@ -1273,14 +1333,29 @@ select {
   color: rgb(205 214 244 / var(--tw-text-opacity));
 }
 
+.dark\:text-l-gray-dark:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(76 79 105 / var(--tw-text-opacity));
+}
+
 .dark\:hover\:bg-f-blue:hover:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(137 180 250 / var(--tw-bg-opacity));
 }
 
+.dark\:hover\:bg-f-lavender:hover:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(180 190 254 / var(--tw-bg-opacity));
+}
+
 .dark\:hover\:text-f-lavender:hover:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(180 190 254 / var(--tw-text-opacity));
+}
+
+.hover\:dark\:text-l-gray-dark:is(.dark *):hover {
+  --tw-text-opacity: 1;
+  color: rgb(76 79 105 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
@@ -1303,6 +1378,11 @@ select {
   .sm\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .sm\:text-4xl {

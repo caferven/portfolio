@@ -19,7 +19,7 @@
                     {% if profile.github_url %}
                         <a
                             href="{{ profile.github_url }}"
-                            class="flex items-center px-4 py-2 bg-l-crust dark:bg-l-gray-dark hover:bg-f-blue dark:hover:bg-f-blue text-f-gray-light dark:text-f-white rounded-full border border-f-blue"
+                            class="flex items-center px-4 py-2 bg-l-crust dark:bg-l-gray-dark hover:bg-f-blue dark:hover:bg-f-blue hover:dark:text-l-gray-dark text-f-gray-light dark:text-f-white rounded-full border border-f-blue"
                         >
                             <img src="{% static 'img/github-logo.png' %}" alt="Github Logo" class="w-6 h-6 sm:mr-2">
                             <span class="hidden sm:block">GitHub</span>
@@ -29,7 +29,7 @@
                         {% if profile.linkedin_url %}
                         <a
                             href="{{ profile.linkedin_url }}"
-                            class="flex items-center px-4 py-2 bg-l-crust dark:bg-l-gray-dark hover:bg-f-blue dark:hover:bg-f-blue text-f-gray-light dark:text-f-white rounded-full border border-f-blue"
+                            class="flex items-center px-4 py-2 bg-l-crust dark:bg-l-gray-dark hover:bg-f-blue dark:hover:bg-f-blue hover:dark:text-l-gray-dark text-f-gray-light dark:text-f-white rounded-full border border-f-blue"
                         >
                             <img src="{% static 'img/linkedin-logo.png' %}" alt="Linkedin Logo" class="w-6 h-6 sm:mr-2">
                             <span class="hidden sm:block">LinkedIn</span>
@@ -40,7 +40,7 @@
                         <a
                             href="{{ profile.resume.url }}"
                             download
-                            class="flex items-center px-4 py-2 bg-l-crust dark:bg-l-gray-dark hover:bg-f-blue dark:hover:bg-f-blue text-f-gray-light dark:text-f-white rounded-full border border-f-blue"
+                            class="flex items-center px-4 py-2 bg-l-crust dark:bg-l-gray-dark hover:bg-f-blue dark:hover:bg-f-blue hover:dark:text-l-gray-dark text-f-gray-light dark:text-f-white rounded-full border border-f-blue"
                         >
                             <img src="{% static 'img/resume-logo.png' %}" alt="Resume Logo" class="w-6 h-6 sm:mr-2">
                             <span class="hidden sm:block">CV</span>
@@ -67,6 +67,18 @@
                                 </div>
                                 <p class="text-sm dark:text-f-white text-l-gray-dark mb-4 font-semibold font-jetbrainsmono">{{ experience.company_name }}</p>
                                 <div class="dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap font-ubuntu">{{ experience.job_description }}</div>
+                                <div class="flex gap-2 mb-4">
+                                    {% for tech in experience.technologies.all %}
+                                        <span class="flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-f-pink text-l-gray-dark dark:text-l-gray-dark font-jetbrainsmono">
+                                            <img 
+                                                src="{{ tech.logo.url }}" 
+                                                alt="{{ tech.name }} logo" 
+                                                class="w-4 h-4 mr-1"
+                                            />
+                                            {{ tech.name }}
+                                        </span>
+                                    {% endfor %}
+                                </div>
                             </div>
                         </div>
                     {% endfor %}
@@ -101,8 +113,57 @@
         {% endif %}
     </section>
 
-    <section id="projects">
-        
+    <section id="projects" class="px-10">
+        {% if has_projects %}
+            <div class="container mx-auto py-24">
+                <h1 class="font-extrabold leading-tight tracking-tight pb-10 sm:text-4xl text-2xl text-f-lavender text-center font-jetbrainsmono">Projects</h1>
+                <div class="flex flex-wrap justify-center gap-10">
+                    {% for project in profile.Project.all %}
+                        <div class="bg-l-crust dark:bg-f-gray p-5 rounded-lg max-w-xl">
+                            <img 
+                                src="{{ project.image_preview.url }}" 
+                                alt="{{ project.name }} preview" 
+                                class="rounded-lg object-cover h-48 w-full mb-4"
+                            />
+                            <h2 class="font-extrabold leading-tight tracking-tight sm:text-2xl text-xl dark:text-f-white text-l-gray-dark font-jetbrainsmono">
+                                {{ project.name }}
+                            </h2>
+                            <p class="dark:text-f-white text-l-gray-dark text-l my-4 font-ubuntu">
+                                {{ project.description }}
+                            </p>
+                            <div class="flex gap-2 mb-4">
+                                {% for tech in project.technologies.all %}
+                                    <span class="flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-f-lavender text-l-gray-dark dark:text-l-gray-dark font-jetbrainsmono">
+                                        <img 
+                                            src="{{ tech.logo.url }}" 
+                                            alt="{{ tech.name }} logo" 
+                                            class="w-4 h-4 mr-1"
+                                        />
+                                        {{ tech.name }}
+                                    </span>
+                                {% endfor %}
+                            </div>
+                            <div class="flex gap-4 font-jetbrainsmono">
+                                {% if project.github_url %}
+                                    <a
+                                        href="{{ project.github_url }}"
+                                        class="flex items-center px-4 py-2 bg-l-crust dark:bg-l-gray-dark hover:dark:text-l-gray-dark hover:bg-f-lavender dark:hover:bg-f-lavender text-f-gray-light dark:text-f-white rounded-full border border-f-lavender"
+                                    >
+                                        <img src="{% static 'img/github-logo.png' %}" alt="Github Logo" class="w-6 h-6 sm:mr-2">
+                                        <span class="hidden sm:block">GitHub</span>
+                                    </a>
+                                {% endif %}
+                                {% if project.preview_url %}
+                                    <a href="{{ project.preview_url }}" class="flex items-center px-4 py-2 bg-l-crust dark:bg-l-gray-dark hover:dark:text-l-gray-dark hover:bg-f-lavender dark:hover:bg-f-lavender text-f-gray-light dark:text-f-white rounded-full border border-f-lavender">
+                                        Preview
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
     </section>
 
 {% endblock content %}
