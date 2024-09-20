@@ -52,11 +52,11 @@
     </section>
 
     <section id="experience">
-        {% if has_experience %}
+        {% if experiences %}
             <div class="container mx-auto px-6 md:py-24 py-24">
                 <h1 class="font-extrabold leading-tight tracking-tight pb-10 sm:text-4xl text-2xl text-f-red text-center font-jetbrainsmono">Work experience</h1>
                 <div class="relative border-l-2 border-l-gray-light max-w-3xl mx-auto">
-                    {% for experience in profile.Experience.all %}
+                    {% for experience in experiences %}
                         <div class="relative pl-12 py-8">
                             <div class="absolute -left-2 top-6 w-4 h-4 rounded-full bg-f-pink flex items-center justify-center">
                             </div>
