@@ -1,10 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from PIL import Image
 
 
 class Profile(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     name = models.CharField()
     description = models.TextField()
     image = models.ImageField(_("Image"), default='default-icon.png', upload_to='profile_pics')
@@ -37,11 +39,10 @@ class Technology(models.Model):
 class Experience(models.Model):
     profile = models.ForeignKey(Profile, related_name="Experience", on_delete=models.CASCADE)
     company_name = models.CharField(max_length=100)
-    company_logo = models.ImageField(_("Company Logo"), default='no-image.png', upload_to='experience_pics')
     job_title = models.CharField(max_length=100)
     job_description = models.TextField(blank=True)
     date_start = models.DateField()
-    date_end = models.DateField()
+    date_end = models.DateField(null=True, blank=True)
     technologies = models.ManyToManyField(Technology, blank=True)
 
     def __str__(self):

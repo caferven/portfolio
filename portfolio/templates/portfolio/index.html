@@ -57,13 +57,20 @@
                 <h1 class="font-extrabold leading-tight tracking-tight pb-10 sm:text-4xl text-2xl text-f-red text-center font-jetbrainsmono">Work experience</h1>
                 <div class="relative border-l-2 border-l-gray-light max-w-3xl mx-auto">
                     {% for experience in experiences %}
-                        <div class="relative pl-12 py-8">
+                        <div class="relative pl-12 py-8 last:mb-12">
                             <div class="absolute -left-2 top-6 w-4 h-4 rounded-full bg-f-pink flex items-center justify-center">
                             </div>
                             <div class="ml-6">
                                 <div class="flex items-center justify-between mb-2">
                                     <h2 class="text-lg font-semibold text-f-red font-jetbrainsmono">{{ experience.job_title }}</h2>
-                                    <span class="text-sm dark:text-f-white text-l-gray-dark font-semibold font-jetbrainsmono">{{ experience.date_start|date:"M Y" }}-{{ experience.date_end|date:"M Y" }}</span>
+                                    <span class="text-sm dark:text-f-white text-l-gray-dark font-semibold font-jetbrainsmono">
+                                        {{ experience.date_start|date:"M Y" }} - 
+                                        {% if experience.date_end %}
+                                            {{ experience.date_end|date:"M Y" }}
+                                        {% else %}
+                                            {% translate "Now" %}
+                                        {% endif %}
+                                    </span>
                                 </div>
                                 <p class="text-sm dark:text-f-white text-l-gray-dark mb-4 font-semibold font-jetbrainsmono">{{ experience.company_name }}</p>
                                 <div class="dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap font-ubuntu">{{ experience.job_description }}</div>
@@ -80,32 +87,6 @@
                                     {% endfor %}
                                 </div>
                             </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        {% endif %}
-
-        {% if has_contributions %}
-            <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
-                <div class="max-w-2xl mx-auto text-center">
-                    <h1 class="font-extrabold leading-tight tracking-tight text-f-peach sm:text-4xl text-2xl dark:text-f-peach font-jetbrainsmono">
-                        Contributions
-                    </h1>
-                </div>
-                <div class="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-y-12 sm:grid-cols-2 justify-items-center">
-                    {% for contribution in profile.Contribution.all %}
-                        <div class="space-y-4 max-w-sm">
-                            <h3 class="text-2xl font-extrabold leading-tight dark:text-f-white text-l-gray-dark break-words font-jetbrainsmono">
-                                {{ contribution.project }}
-                            </h3>
-                            <div class="dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap font-ubuntu">{{ contribution.description }}</div>
-                            <a
-                                href="{{ contribution.project_url }}"
-                                class="text-l-rosewater text-sm font-jetbrainsmono"
-                            >
-                                See the repo &gt;
-                            </a>
                         </div>
                     {% endfor %}
                 </div>
@@ -159,6 +140,32 @@
                                     </a>
                                 {% endif %}
                             </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if has_contributions %}
+            <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h1 class="font-extrabold leading-tight tracking-tight text-f-peach sm:text-4xl text-2xl dark:text-f-peach font-jetbrainsmono">
+                        Contributions
+                    </h1>
+                </div>
+                <div class="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-y-12 sm:grid-cols-2 justify-items-center">
+                    {% for contribution in profile.Contribution.all %}
+                        <div class="space-y-4 max-w-sm">
+                            <h3 class="text-2xl font-extrabold leading-tight dark:text-f-white text-l-gray-dark break-words font-jetbrainsmono">
+                                {{ contribution.project }}
+                            </h3>
+                            <div class="dark:text-f-white text-l-gray-dark text-l whitespace-pre-wrap font-ubuntu">{{ contribution.description }}</div>
+                            <a
+                                href="{{ contribution.project_url }}"
+                                class="text-l-rosewater text-sm font-jetbrainsmono"
+                            >
+                                See the repo &gt;
+                            </a>
                         </div>
                     {% endfor %}
                 </div>

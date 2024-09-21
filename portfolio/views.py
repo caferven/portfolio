@@ -3,7 +3,7 @@ from portfolio.models import Profile
 
 
 def index(request):
-    profile = Profile.objects.get(id="1")
+    profile = Profile.objects.latest("id")
     has_contributions = profile.Contribution.exists()
     experiences = profile.Experience.all().order_by('-date_start')
     has_projects = profile.Project.exists()
