@@ -3,3 +3,5 @@ psycopg2
 pillow
 python-decouple
 django-crispy-forms
+pytailwindcss
+django-modeltranslation

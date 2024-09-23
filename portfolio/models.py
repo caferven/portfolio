@@ -46,7 +46,7 @@ class Experience(models.Model):
     technologies = models.ManyToManyField(Technology, blank=True)
 
     def __str__(self):
-        return self.job_title
+        return self.company_name
     
 
 class Contribution(models.Model):
