@@ -69,12 +69,12 @@
                     <li>
                         <a href="{% url 'index' %}#about" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "About Me" %}</a>
                     </li>
-                    {% if has_experience %}
+                    {% if experiences %}
                         <li>
                             <a href="{% url 'index' %}#experience" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Experience" %}</a>
                         </li>
                     {% endif %}
-                    {% if has_experience %}
+                    {% if has_projects %}
                         <li>
                             <a href="{% url 'index' %}#projects" class="text-lg font-semibold leading-6 text-l-gray-dark dark:text-f-white hover:text-l-lavender dark:hover:text-f-lavender">{% translate "Projects" %}</a>
                         </li>

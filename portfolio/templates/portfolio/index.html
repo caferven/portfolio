@@ -3,7 +3,7 @@
 {% load static %}
 {% block content %}
     <section id="about" class="px-10">
-        <div class="container mx-auto flex flex-col-reverse lg:flex-row md:py-24 py-24 gap-32 justify-center items-center">
+        <div class="container mx-auto flex flex-col-reverse lg:flex-row py-24 gap-32 justify-center items-center">
             <div class="relative overflow-hidden">
                 <img
                     src="{{ profile.image.url }}"
@@ -12,7 +12,7 @@
                 />
             </div>
             <div class="my-auto flex flex-col gap-4 items-center">
-                <h1 class="font-extrabold leading-tight tracking-tight sm:text-4xl text-2xl dark:text-f-blue text-f-blue font-jetbrainsmono">About Me</h1>
+                <h1 class="font-extrabold leading-tight tracking-tight sm:text-4xl text-2xl dark:text-f-blue text-f-blue font-jetbrainsmono">{% translate "About Me" %}</h1>
                 <div class="dark:text-f-white text-l-gray-dark text-l py-8 whitespace-pre-wrap max-w-xl mx-auto font-ubuntu">{{ profile.description }}</div>
                 <div class="w-60 h-0.5 bg-f-blue"></div>
                 <div class="flex flex-row gap-4 font-jetbrainsmono">
@@ -53,8 +53,8 @@
 
     <section id="experience">
         {% if experiences %}
-            <div class="container mx-auto px-6 md:py-24 py-24">
-                <h1 class="font-extrabold leading-tight tracking-tight pb-10 sm:text-4xl text-2xl text-f-red text-center font-jetbrainsmono">Work experience</h1>
+            <div class="container mx-auto px-6 py-24">
+                <h1 class="font-extrabold leading-tight tracking-tight pb-10 sm:text-4xl text-2xl text-f-red text-center font-jetbrainsmono">{% translate "Work Experience" %}</h1>
                 <div class="relative border-l-2 border-l-gray-light max-w-3xl mx-auto">
                     {% for experience in experiences %}
                         <div class="relative pl-12 py-8 last:mb-12">
@@ -97,7 +97,7 @@
     <section id="projects" class="px-10">
         {% if has_projects %}
             <div class="container mx-auto py-24">
-                <h1 class="font-extrabold leading-tight tracking-tight pb-10 sm:text-4xl text-2xl text-f-lavender text-center font-jetbrainsmono">Projects</h1>
+                <h1 class="font-extrabold leading-tight tracking-tight pb-10 sm:text-4xl text-2xl text-f-lavender text-center font-jetbrainsmono">{% translate "Projects" %}</h1>
                 <div class="grid grid-cols-1 justify-items-center gap-10">
                     {% for project in profile.Project.all %}
                         <div class="bg-l-crust dark:bg-f-gray p-5 rounded-lg w-full max-w-xl">
@@ -136,7 +136,7 @@
                                 {% endif %}
                                 {% if project.preview_url %}
                                     <a href="{{ project.preview_url }}" class="flex items-center px-4 py-2 bg-l-crust dark:bg-l-gray-dark hover:dark:text-l-gray-dark hover:bg-f-lavender dark:hover:bg-f-lavender text-f-gray-light dark:text-f-white rounded-full border border-f-lavender">
-                                        Preview
+                                        {% translate "Preview" %}
                                     </a>
                                 {% endif %}
                             </div>
@@ -150,7 +150,7 @@
             <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
                 <div class="max-w-2xl mx-auto text-center">
                     <h1 class="font-extrabold leading-tight tracking-tight text-f-peach sm:text-4xl text-2xl dark:text-f-peach font-jetbrainsmono">
-                        Contributions
+                        {% translate "Contributions" %}
                     </h1>
                 </div>
                 <div class="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-y-12 sm:grid-cols-2 justify-items-center">
@@ -164,7 +164,7 @@
                                 href="{{ contribution.project_url }}"
                                 class="text-l-rosewater text-sm font-jetbrainsmono"
                             >
-                                See the repo &gt;
+                                {% translate "See the repo" %} &gt;
                             </a>
                         </div>
                     {% endfor %}

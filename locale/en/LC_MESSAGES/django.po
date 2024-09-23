@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-15 18:07+0200\n"
+"POT-Creation-Date: 2024-09-23 19:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,34 +17,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: core/settings.py:117
+
+#: core/settings.py:118
 msgid "Spanish"
 msgstr ""
 
-#: core/settings.py:118
+#: core/settings.py:119
 msgid "English"
 msgstr ""
 
-#: portfolio/models.py:9
+#: portfolio/models.py:12
 msgid "Image"
 msgstr ""
 
-#: portfolio/templates/portfolio/base.html:19
+#: portfolio/models.py:13 portfolio/models.py:33
+msgid "Logo"
+msgstr ""
+
+#: portfolio/models.py:66
+msgid "Image Preview"
+msgstr ""
+
+#: portfolio/templates/portfolio/base.html:28
+#: portfolio/templates/portfolio/base.html:67
 msgid "Home"
 msgstr ""
 
-#: portfolio/templates/portfolio/base.html:20
-msgid "Experience"
-msgstr ""
-
-#: portfolio/templates/portfolio/base.html:21
-msgid "Projects"
-msgstr ""
-
-#: portfolio/templates/portfolio/base.html:22
+#: portfolio/templates/portfolio/base.html:29
+#: portfolio/templates/portfolio/base.html:70
+#: portfolio/templates/portfolio/index.html:15
 msgid "About Me"
 msgstr ""
 
-#: portfolio/templates/portfolio/base.html:23
+#: portfolio/templates/portfolio/base.html:32
+#: portfolio/templates/portfolio/base.html:35
+#: portfolio/templates/portfolio/base.html:74
+msgid "Experience"
+msgstr ""
+
+#: portfolio/templates/portfolio/base.html:38
+#: portfolio/templates/portfolio/base.html:79
+#: portfolio/templates/portfolio/index.html:100
+msgid "Projects"
+msgstr ""
+
+#: portfolio/templates/portfolio/base.html:41
+#: portfolio/templates/portfolio/base.html:83
 msgid "Contact"
+msgstr ""
+
+#: portfolio/templates/portfolio/index.html:57
+msgid "Work Experience"
+msgstr ""
+
+#: portfolio/templates/portfolio/index.html:71
+msgid "Now"
+msgstr ""
+
+#: portfolio/templates/portfolio/index.html:139
+msgid "Preview"
+msgstr ""
+
+#: portfolio/templates/portfolio/index.html:153
+msgid "Contributions"
+msgstr ""
+
+#: portfolio/templates/portfolio/index.html:167
+msgid "See the repo"
 msgstr ""
