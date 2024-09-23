@@ -17,10 +17,10 @@ menuLinks.forEach(link => {
 themeMode.addEventListener("click", ()=>{
     body.classList.toggle("dark")
     if (body.classList.contains("dark")) {
-        themeMode.src = lightModeIcon
-        themeMode.alt = "Light mode"
-    } else {
         themeMode.src = darkModeIcon
         themeMode.alt = "Dark mode"
+    } else {
+        themeMode.src = lightModeIcon
+        themeMode.alt = "Light mode"
     }
 })

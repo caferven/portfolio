@@ -54,7 +54,7 @@
                                 {% endfor %}
                             </select>
                         </form>
-                        <img id="theme-mode" src="{% static 'img/dark-mode.png' %}" alt="Dark mode" class="size-6 cursor-pointer">
+                        <img id="theme-mode" src="{% static 'img/light-mode.png' %}" alt="Dark mode" class="h-6 cursor-pointer">
                     
                     <div id="hamburger-menu" class="space-y-1 lg:hidden cursor-pointer z-10">
                         <div class="w-6 h-0.5 bg-black dark:bg-f-lavender"></div>
@@ -90,8 +90,15 @@
             {% block content %}{% endblock %}
         </main>
 
-        <footer>
-            
+        <footer class="w-full p-6 bg-l-crust dark:bg-f-gray text-l-gray-dark dark:text-f-white">
+            <div class="text-center">
+                <p>
+                    © {% now "Y" %}
+                    <a class="font-semibold" href="mailto:{{ profile.mail }}">
+                        {{ profile.name }}
+                    </a>
+                </p>
+            </div>
         </footer>
 
         <script src="{% static 'js/app.js' %}"></script>
