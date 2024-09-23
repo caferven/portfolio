@@ -15,7 +15,7 @@
 
         <link rel="shortcut icon" type="image/png" href="{{ profile.logo.url }}" >
 
-        <title>{{ profile.name }}'s portfolio</title>
+        <title>{% blocktrans with name=profile.name %}{{ name }}'s portfolio{% endblocktrans %}</title>
     </head>
     <body>
         <header class="bg-l-crust dark:bg-f-gray sticky z-50 top-0 font-jetbrainsmono">
