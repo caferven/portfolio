@@ -7,14 +7,14 @@ from PIL import Image
 
 class Profile(models.Model):
     user = models.ForeignKey(User, related_name="Profile", on_delete=models.CASCADE)
-    name = models.CharField()
+    name = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(_("Image"), default='default-icon.png', upload_to='profile_pics')
     logo = models.ImageField(_("Logo"), default='logo.png', upload_to='extra')
     mail = models.CharField(max_length=200)
     resume = models.FileField(blank=True, upload_to='resumes')
-    linkedin_url = models.CharField(blank=True)
-    github_url = models.CharField(blank=True)
+    linkedin_url = models.CharField(max_length=200, blank=True)
+    github_url = models.CharField(max_length=200, blank=True)
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -53,7 +53,7 @@ class Contribution(models.Model):
     profile = models.ForeignKey(Profile, related_name="Contribution", on_delete=models.CASCADE)
     project = models.CharField(max_length=100)
     description = models.TextField(max_length=500, blank=True)
-    project_url = models.CharField()
+    project_url = models.CharField(max_length=200)
 
     def __str__(self) -> str:
         return self.project
@@ -64,8 +64,8 @@ class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
     image_preview = models.ImageField(_("Image Preview"), default='no-image.png', upload_to='project_pics')
-    github_url = models.CharField(blank=True)
-    preview_url = models.CharField(blank=True)
+    github_url = models.CharField(max_length=200, blank=True)
+    preview_url = models.CharField(max_length=200, blank=True)
     technologies = models.ManyToManyField(Technology, blank=True)
 
     def __str__(self):
