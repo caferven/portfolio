@@ -6,6 +6,8 @@ It comes by default in English and Spanish and a switch to select dark or light 
 
 If you want to test it, you can use [this](https://github.com/caferven/django-docker-utils) guide to deploy this project inside a Docker container.
 
+In order to start filling it, a superuser must be created, and then everything can be managed from the admin app.
+
 
 ## About Me
 
