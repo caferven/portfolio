@@ -35,3 +35,8 @@ There can be multiple personal projects with multiple skills related to them. Th
 Inside the Projects sections, there's an extra one called Contributions. It can be used to display contributions to open source projects, for example.
 
 ![contributions](https://github.com/caferven/portfolio/blob/main/readme/contributions.png)
+
+
+## Additional info
+
+Most of the colors used to make this web are from the [Catppuccin](https://catppuccin.com/palette) color palette.
