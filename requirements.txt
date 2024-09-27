@@ -6,3 +6,4 @@ django-crispy-forms
 pytailwindcss
 django-modeltranslation
 whitenoise
+mysqlclient
