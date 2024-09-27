@@ -11,7 +11,7 @@ If you want to test it, you can use [this](https://github.com/caferven/django-do
 
 The first section is just an About Me with a profile image, a short description, and a few links (GitHub, LinkedIn and a downloadable resume).
 
-![light mode about](https://github.com/caferven/django-docker-utils)
+![light mode about](https://github.com/caferven/portfolio/blob/main/readme/light-mode-about-me.png)
 
 ![dark mode about](https://github.com/caferven/portfolio/blob/main/readme/dark-mode-about-me.png)
 
