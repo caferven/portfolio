@@ -42,3 +42,6 @@ Inside the Projects sections, there's an extra one called Contributions. It can 
 ## Additional info
 
 Most of the colors used to make this web are from the [Catppuccin](https://catppuccin.com/palette) color palette.
+
+
+Changed from PostgreSQL to MySQL to deploy the project in PythonAnywhere.
