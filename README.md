@@ -8,8 +8,16 @@ If you want to test it, you can use [this](https://github.com/caferven/django-do
 
 In order to start filling it, a superuser must be created, and then everything can be managed from the admin app.
 
+## Stack
 
-## About Me
+- **[Django](https://www.djangoproject.com/)**: high-level Python web framework.
+- **[Tailwind CSS](https://tailwindcss.com/)**: a utility-first CSS framework.
+- **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)**: a lightweight interpreted programming language.
+
+
+## Sections
+
+### About Me
 
 The first section is just an About Me with a profile image, a short description, and a few links (GitHub, LinkedIn and a downloadable resume).
 
@@ -18,28 +26,28 @@ The first section is just an About Me with a profile image, a short description,
 ![dark mode about](https://github.com/caferven/portfolio/blob/main/readme/dark-mode-about-me.png)
 
 
-## Work Experience
+### Work Experience
 
 Each of the experiences related to the profile will be ordered by inverse start date by default. Each one of them may have multiple skills/technologies.
 
 ![work experiences](https://github.com/caferven/portfolio/blob/main/readme/work-experience.png)
 
 
-## Projects
+### Projects
 
 There can be multiple personal projects with multiple skills related to them. There can be a GitHub link and a preview one.
 
 ![projects](https://github.com/caferven/portfolio/blob/main/readme/projects.png)
 
 
-## Contributions
+### Contributions
 
 Inside the Projects sections, there's an extra one called Contributions. It can be used to display contributions to open source projects, for example.
 
 ![contributions](https://github.com/caferven/portfolio/blob/main/readme/contributions.png)
 
 
-## Additional info
+### Additional info
 
 Most of the colors used to make this web are from the [Catppuccin](https://catppuccin.com/palette) color palette.
 
